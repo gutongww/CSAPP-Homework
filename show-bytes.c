@@ -86,8 +86,7 @@ void hw1_eg() {
   show_short(num1);
   printf("For x = %d\n", numll);
   show_long(numll);
-  printf("For x = %d\n", num33);
-  show_double(num33);
+
 }
 
 
