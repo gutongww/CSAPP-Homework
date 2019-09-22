@@ -27,6 +27,17 @@ void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
 
+void show_short(short int x) {
+    show_bytes((byte_pointer) &x, sizeof(short int));
+}
+void show_long(long int x) {
+    show_bytes((byte_pointer) &x, sizeof(long int));
+}
+void show_double(double x) {
+    show_bytes((byte_pointer) &x, sizeof(double));
+}
+
+/* $end show-bytes */
 
 /* $begin test-show-bytes */
 void test_show_bytes(int val) {
