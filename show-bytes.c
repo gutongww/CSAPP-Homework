@@ -12,12 +12,11 @@ typedef unsigned char *byte_pointer;
 void show_bytes(byte_pointer start, size_t len) {
     size_t i;
     for (i = 0; i < len; i++)
-	printf("%p\t0x%.2x\n", &start[i], start[i]); 
     printf("\n");
 }
 
 void show_int(int x) {
-    show_bytes((byte_pointer) &x, sizeof(int)); 
+    show_bytes((byte_pointer) &x, sizeof(int));
 }
 
 void show_float(float x) {
@@ -27,7 +26,6 @@ void show_float(float x) {
 void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
-/* $end show-bytes */
 
 
 /* $begin test-show-bytes */
@@ -80,28 +78,42 @@ void float_eg() {
 
 }
 
+void hw1_eg() {
+  short int num1 = 358;
+  long int numll = 274877906944;
+  double num33 = 3.1415926535;
+  printf("For x = %d\n", num1);
+  show_short(num1);
+  printf("For x = %d\n", numll);
+  show_long(numll);
+  printf("For x = %d\n", num33);
+  show_double(num33);
+}
+
+
+
 void string_ueg() {
 /* $begin show-ustring */
 const char *s = "ABCDEF";
-show_bytes((byte_pointer) s, strlen(s)); 
+show_bytes((byte_pointer) s, strlen(s));
 /* $end show-ustring */
 }
 
 void string_leg() {
 /* $begin show-lstring */
 const char *s = "abcdef";
-show_bytes((byte_pointer) s, strlen(s)); 
+show_bytes((byte_pointer) s, strlen(s));
 /* $end show-lstring */
 }
 
-void show_twocomp() 
+void show_twocomp()
 {
 /* $begin show-twocomp */
-    short x = 12345; 
-    short mx = -x; 
-    
-    show_bytes((byte_pointer) &x, sizeof(short)); 
-    show_bytes((byte_pointer) &mx, sizeof(short)); 
+    short x = 12345;
+    short mx = -x;
+
+    show_bytes((byte_pointer) &x, sizeof(short));
+    show_bytes((byte_pointer) &mx, sizeof(short));
 /* $end show-twocomp */
 }
 
@@ -126,6 +138,15 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
+	printf("Calling show_short\n");
+	short int num1111=358;
+	show_short(num1111);
+	long int num2222=274877906944;
+	show_long(num2222);
+	double num3333 = 3.1415926535;
+	show_double(num3333);
+
+
     }
     return 0;
 }
