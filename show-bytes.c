@@ -89,16 +89,6 @@ void float_eg() {
 
 }
 
-void hw1_eg() {
-  short int num1 = 358;
-  long int numll = 274877906944;
-  double num33 = 3.1415926535;
-  printf("For x = %d\n", num1);
-  show_short(num1);
-  printf("For x = %d\n", numll);
-  show_long(numll);
-
-}
 
 
 
@@ -148,12 +138,17 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
-	printf("Calling show_short\n");
 	short int num1111=358;
+    printf("Calling show_short\n");
+    printf("For x = %d\n", num1111);
 	show_short(num1111);
 	long int num2222=274877906944;
+    printf("Calling show_long\n");
+    printf("For x = %d\n", num2222);
 	show_long(num2222);
 	double num3333 = 3.1415926535;
+    printf("Calling show_double\n");
+    printf("For x = %d\n", num3333);
 	show_double(num3333);
 
 
