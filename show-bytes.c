@@ -30,8 +30,8 @@ void show_pointer(void *x) {
 void show_short(short int x) {
     show_bytes((byte_pointer) &x, sizeof(short int));
 }
-void show_long(long int x) {
-    show_bytes((byte_pointer) &x, sizeof(long int));
+void show_long(long long int x) {
+    show_bytes((byte_pointer) &x, sizeof(long long int ));
 }
 void show_double(double x) {
     show_bytes((byte_pointer) &x, sizeof(double));
@@ -142,13 +142,13 @@ int main(int argc, char *argv[])
     printf("Calling show_short\n");
     printf("For x = %d\n", num1111);
 	show_short(num1111);
-	long int num2222=274877906944;
+	long long int num2222=274877906944;
     printf("Calling show_long\n");
-    printf("For x = %d\n", num2222);
+    printf("For x = %lld\n", num2222);
 	show_long(num2222);
 	double num3333 = 3.1415926535;
     printf("Calling show_double\n");
-    printf("For x = %d\n", num3333);
+    printf("For x = %.16f\n", num3333);
 	show_double(num3333);
 
 
